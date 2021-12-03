@@ -1,92 +1,46 @@
-import numpy
-from numpy import array
+#Author: Rohan Sinha
+#Date: 2/12/2021
+#Email: sinharohan.work@gmail.com
+#Last modified by: Rohan Sinha
+#Last modify time: 2021-12-2 23:54:20
+#Program finds the sum, mean, standrad deviation, range, ascending and descending orders of 10 numbers given by the User
+
 import tkinter as tk
 from tkinter import simpledialog
 from tkinter import messagebox
+import statistics
+
+#Function that calculates everything and presents it
+def Amogus(lst):
+  highest = max(lst)
+  lowest = min(lst)
+  fullrange = highest - lowest
+  Ascend = sorted(lst)
+  Descend = sorted(lst, reverse = True)
+  output = "Sum is: %s" %(sum(lst))
+  output += "\nRange is: %s" %(fullrange)
+  output += "\nAverage is: %s" %(sum(lst) / 10)
+  output += "\nStandard deviation is: %s" %(statistics.stdev(lst))
+  output += "\n Ascending order: %s" %(Ascend)
+  output += "\n Descending order: %s" %(Descend)
+
+  messagebox.showinfo("amogus", output)
 
 ROOT = tk.Tk()
-
 ROOT.withdraw()
 # the input dialogs
-sum = 0;
-n1 = simpledialog.askinteger(title="amogus",
-                                  prompt="Enter number 1:")
-sum = sum + n1;
+n1 = simpledialog.askinteger(title="amogus",prompt="Enter number 1:")
+n2 = simpledialog.askinteger(title="amogus",prompt="Enter number 2:")
+n3 = simpledialog.askinteger(title="amogus",prompt="Enter number 3:")
+n4 = simpledialog.askinteger(title="amogus",prompt="Enter number 4:")
+n5 = simpledialog.askinteger(title="amogus",prompt="Enter number 5:")
+n6 = simpledialog.askinteger(title="amogus",prompt="Enter number 6:")
+n7 = simpledialog.askinteger(title="amogus",prompt="Enter number 7:")
+n8 = simpledialog.askinteger(title="amogus",prompt="Enter number 8:")
+n9 = simpledialog.askinteger(title="amogus",prompt="Enter number 9:")  
+n10 = simpledialog.askinteger(title="amogus",prompt="Enter number 10:")
 
-n2 = simpledialog.askinteger(title="amogus",
-                                  prompt="Enter number 2:")
-sum = sum + n2;
+lst = [n1, n2, n3, n4, n5, n6, n7, n8, n9, n10]
 
-n3 = simpledialog.askinteger(title="amogus",
-                                  prompt="Enter number 3:")
-sum = sum + n3;
-
-n4 = simpledialog.askinteger(title="amogus",
-                                  prompt="Enter number 4:")
-sum = sum + n4;
-
-n5 = simpledialog.askinteger(title="amogus",
-                                  prompt="Enter number 5:")
-sum = sum + n5;
-
-n6 = simpledialog.askinteger(title="amogus",
-                                  prompt="Enter number 6:")
-sum = sum + n6;
-
-n7 = simpledialog.askinteger(title="amogus",
-                                  prompt="Enter number 7:")
-sum = sum + n7;
-
-n8 = simpledialog.askinteger(title="amogus",
-                                  prompt="Enter number 8:")
-sum = sum + n8;
-
-n9 = simpledialog.askinteger(title="amogus",
-                                  prompt="Enter number 9:")
-sum = sum + n9;
-
-n10 = simpledialog.askinteger(title="amogus",
-                                  prompt="Enter number 10:")
-sum = sum + n10;
-
-# the process for mean
-mean = sum/10.0;
-
-# process for standard deviation
-variance = (((n1 - mean) * (n1 - mean) + (n2 - mean) * (n2 - mean) + (n3 - mean)*(n3 - mean) + (n4 - mean) * (n4 - mean) + (n5 - mean) * (n5 - mean) + (n6 - mean) * (n6 - mean) + (n7 - mean) * (n7 - mean) + (n8 - mean) * (n8 - mean) + (n9 - mean) * (n9 - mean) + (n10 - mean) * (n10 - mean))/9);
-
-sd = numpy.sqrt(variance);
-
-# making an array with all the numbers
-arr = array([n1, n2, n3, n4, n5, n6, n7, n8, n9, n10]);
-
-# determination of minimum and maximum values in array
-max = arr[0]
-min = arr[0]
-
-i = 0
-for i in range(10):
-  if (arr[i] > max):
-      max = arr[i]
-
-  if (arr[i] < min):
-      max = arr[i]
-
-  i = i + 1
-
-# the process for range
-fullrange = max - min;
-
-# the process for ascending and descending order
-arrAscend = sorted(arr)
-arrDescend = sorted(arr, reverse = True)
-
-# the output message
-output = "Sum is: %s" %(sum)
-output += "\nMean is: %s" %(sum)
-output += "\nStandard Deviation is: %s" %(sd) 
-output += "\nRange is: %s" %(fullrange)
-output += "\nAscending order: %s" %(arrAscend)
-output += "\nDescending order: %s" %(arrDescend)
-
-messagebox.showinfo("amogus", output)
+#Calling the function
+Amogus(lst)
